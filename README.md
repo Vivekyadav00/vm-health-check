@@ -14,17 +14,11 @@ A bash script to monitor system health metrics (CPU, Memory, and Disk usage) on 
 ## Requirements
 
 - Ubuntu-based system
-- `bc` command (for floating-point calculations)
 - `top` command
 - `free` command
 - `df` command
 
-Most of these commands come pre-installed on Ubuntu systems. If `bc` is missing, you can install it using:
-
-```bash
-sudo apt-get update
-sudo apt-get install bc
-```
+All of these commands come pre-installed on Ubuntu systems.
 
 ## Installation
 
@@ -65,14 +59,14 @@ To get detailed information about system metrics and any issues found:
 Example output:
 ```
 Current Metrics:
-CPU Usage: 25.75%
-Memory Usage: 45.30%
-Disk Usage: 72.00%
+CPU Usage: 25%
+Memory Usage: 45%
+Disk Usage: 72%
 
 Health Status: NOT HEALTHY
 
 Issues Found:
-- Disk usage is high: 72.00%
+- Disk usage is high: 72%
 ```
 
 ## How It Works
