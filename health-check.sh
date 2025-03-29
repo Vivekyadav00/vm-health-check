@@ -1,10 +1,17 @@
 #!/bin/bash
 
+#!/bin/bash
+
 # Function to get CPU usage
 get_cpu_usage() {
     cpu_idle=$(top -bn1 | grep "Cpu(s)" | awk '{print $8}')
-    cpu_usage=$(( 100 - ${cpu_idle%.*} ))
-    echo $cpu_usage
+    # Ensure we have a valid number before calculation
+    if [[ $cpu_idle =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+        cpu_usage=$(( 100 - ${cpu_idle%.*} ))
+        echo $cpu_usage
+    else
+        echo 0
+    fi
 }
 
 # Function to get memory usage
